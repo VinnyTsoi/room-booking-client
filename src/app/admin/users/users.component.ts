@@ -38,6 +38,7 @@ export class UsersComponent implements OnInit {
           }
         }
         if (params['action'] == 'add') {
+          this.action = 'add';
           this.formResetService.addUserEventEmitter.emit(this.selectedUser);
         }
         if (!params['action']) {

@@ -30,7 +30,6 @@ export class RoomsComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(
       (params) => {
         const id = params['id'];
-
         if (id) {
           this.selectedRoom = this.rooms.find( room => room.id === +id);
           this.action = params['action'];
@@ -40,7 +39,9 @@ export class RoomsComponent implements OnInit {
           this.action = 'edit';
           this.formResetService.addRoomEventEmitter.emit(this.selectedRoom);
         }
-
+        if (!params['action']) {
+          this.action = null;
+        }
       }
     );
   }

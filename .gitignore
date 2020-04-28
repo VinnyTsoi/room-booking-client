@@ -1,1 +1,16 @@
 node_modules
+/node_modules
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+

@@ -32,10 +32,6 @@ export class UserEditComponent implements OnInit, OnDestroy {
               private router: Router,
               private formResetService: FormResetService) { }
 
-  ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
-  }
-
   ngOnInit() {
     this.initializeEditComponent();
 
@@ -43,9 +39,14 @@ export class UserEditComponent implements OnInit, OnDestroy {
       (newUser: User) => {
         this.user = newUser;
         this.initializeEditComponent();
+        console.log(this.user);
       }
     );
 
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
   }
 
   private initializeEditComponent() {

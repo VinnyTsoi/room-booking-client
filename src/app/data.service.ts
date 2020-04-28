@@ -63,7 +63,13 @@ export class DataService {
     return of(null);
   }
 
-  resetPassword(): Observable<any> {
+  deleteRoom(roomId): Observable<any> {
+    const unwantedRoom = this.rooms.find( r => r.id == roomId );
+    this.rooms.splice(this.rooms.indexOf(unwantedRoom), 1);
+    return of(null);
+  }
+
+  resetPassword(userId): Observable<any> {
     console.log('password reset function to follow');
     return of(null);
   }
